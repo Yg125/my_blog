@@ -1,0 +1,13 @@
+.DB_Store
+Thumbs_db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+.vscode/
+.idea/
+/.idea/
+.deploy_git*/
+.idea
+themes/butterfly/.git
