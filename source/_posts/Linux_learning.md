@@ -3,6 +3,7 @@ title: Linux_learning
 date: 2022-06-16 16:04:03
 tags: Linux
 description: 'linux learning these days'
+cover: https://pic1.zhimg.com/v2-dc98064e8bc40d83d91362d4ce1dd9d3_1440w.jpg?source=172ae18b
 top_img: https://picsum.photos/id/477/4919/3258
 ---
 

@@ -3,6 +3,7 @@ title: Git_learning
 date: 2022-06-16 20:18:21
 tags: Git
 description: 'Git principles and common operations'
+cover: http://cdn.admxj.com/wp-content/uploads/2017/07/git.jpg
 top_img: https://picsum.photos/id/477/4919/3258
 ---
 
