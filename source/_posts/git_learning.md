@@ -62,3 +62,12 @@ branch可以理解为在这个HEAD下创建另一个方向，做得任何改动�
 24. `git pull origin branch_name`：将远程仓库的branch_name分支与本地仓库的**当前分支**合并
 25. `git branch --set-upstream-to=origin/branch_name1 branch_name2`：将远程的branch_name1分支与本地的branch_name2分支对应,通常这样来建立远程和本地的分支联系，然后在从远程拉取到本地指定branch
 26. `git checkout -t origin/branch_name`:将远程的branch_name分支拉取到本地
+
+### 3. .gitignore
+------
+通过配置.gitignore文件git的时候可以直接忽略某些自动生成的文件不上传
+``` bash
+.vscode/   #忽略.vscode文件夹的文件更新
+*.log       #忽略所有.log后缀的文件
+config.ini  #忽略config.ini文件
+```
