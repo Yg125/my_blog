@@ -43,16 +43,28 @@ top_img: https://d29fhpw069ctt2.cloudfront.net/photo/35185/preview/foggy-read_np
 ## 3. Docker登录容器需要注意的地方
 
 在进入一个容器之后——`docker attach container`是直接以`root`用户来操作（以ubuntu为例）
+输入命令`passwd`即可为`root`用户创建密码
+如果想要创建一个普通用户（root用户权限太大），应该使用`adduser xxx`，这样就创建了普通用户，再`usermod -aG sudo xxx`为用户添加可sudo权限
 如果在`attach`进入容器之中`exit`/`Ctrl-d`的话会关闭这个容器，这个容器也就停止了，如果只是想暂时挂起而不是关闭的话使用的是先按`Ctrl-p`，再按`Ctrl-q`
-如果是ssh登录一个容器（因为容器也是一个ubuntu服务器了），那么可以直接`exit`/`Ctrl-d`退出，不影响容器本身状态
+如果是`ssh`登录一个容器（因为容器也是一个ubuntu服务器了），那么可以直接`exit`/`Ctrl-d`退出，不影响容器本身状态
+`ssh root@localhost -p 20000`
+`ssh xxxx@localhost -p 20000`
+其中localhost为服务器ip地址，见下
 
 ## 4. 涉及ssh及登录端口
 我的服务器以20号端口ssh登录，那么如果想要本地或者服务器直接ssh到docker的容器的话（将容器看作服务器）需要修改端口，在我的Tencent服务器开启了20000端口，这样需要ssh到docker的容器的话就可以指明端口号为20000即可成功ssh了
 ``` bash
-docker run -p 20000:22 --name my_docker_server -itd ubuntu:18.04 
+docker run -p 20000:22 --name my_server -itd ubuntu:18.04 
 # 创建并运行ubuntu:18.04镜像并将20000端口映射到20号端口
 ```
 ![我开启的20000端口](./docker_learning/docker端口截图.png)
 即20000端口也可以实现20号端口ssh的功能
-同时还可以在本地`./.ssh/config`中配置docker容器的登录信息，并使用`ssh-copy-id Hostname`即可直接免密登录
-由于docker容器部署在服务器上，所以IP地址即Hostname与服务器的IP地址相同，只不过端口号不同，连接/设置时只需强调端口号，ip地址是一样的
+同时还可以在本地`./.ssh/config`中配置docker容器的登录信息
+``` bash
+Host Djserver
+  Hostname 114.132.67.106
+  User yangang
+  port 20000
+```
+并使用`ssh-copy-id Hostname`即可直接免密登录
+> 由于docker容器部署在服务器上，所以IP地址即Hostname与服务器的IP地址相同，只不过端口号不同，连接/设置时只需强调端口号，ip地址是一样的
