@@ -1,9 +1,9 @@
 ---
-title: Django_learning
+title: Django_learning_1
 date: 2022-06-19 15:03
 tags: Django
 categories: Django Learning
-description: 'Django learning 1'
+description: 'Django项目创建'
 cover: https://miro.medium.com/max/1200/1*xJCYi2kk1HXBBJJVItq31w.png
 top_img: https://d29fhpw069ctt2.cloudfront.net/photo/35185/preview/foggy-read_npreviews_414c.jpg
 ---
@@ -72,6 +72,8 @@ game
 包含了django提供的admin功能，此时需要将数据库的内容migrate同步一下`python3 manage.py migrate`
 这样就可以114.132.67.106:8000/admin进入管理员界面了
 之后键入`python3 manage.py createsuperuser`创建管理员，即可登录并管理后台
+
+在`settings.py`文件中找到`TIME_ZONE`，修改为`Asia/Shanghai`，可以显示中国时间
 
 ### 2.2 创建自己的页面
 首先需要在game中新建文件urls.py 和文件夹 templates
