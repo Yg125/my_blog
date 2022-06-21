@@ -90,19 +90,20 @@ find $JS_PATH_SRC -type f -name '*.js' | sort | xargs cat > ${JS_PATH_DIST}game.
     <!-- 使用jquery渲染 -->
     <link rel="stylesheet" href="https://cdn.acwing.com/static/jquery-ui-dist/jquery-ui.min.css">
     <script src="https://cdn.acwing.com/static/jquery/js/jquery-3.3.1.min.js"></script>
-    <!-- 使用自己写的css和js文件 -->
     <link rel="stylesheet" href="{% static 'css/game.css' %}">
-    <script src="{% static 'js/dist/game.js' %}"></script> 
+    <!-- 使用自己写的css和js文件 -->
 </head>
 
-<body style="margin:0">
+<body style="margin: 0">
     <div id="ac_game_12345678"></div>
-    <script>
+    <script type="module">
+        import {AcGame} from "{% static 'js/dist/game.js' %}";
         $(document).ready(function(){
-            let ac_game = new Ac_Game("ac_game_12345678");
+            let ac_game = new AcGame("ac_game_12345678");
         });
     </script>
-</body> 
+</body>
+
 ```
 在`views`文件夹中创建`menu`,`playground`,`settings`文件夹，并分别在三个文件夹中创建`__init__.py`文件，创建一个`index.py`文件,渲染得到html的信息
 ```python
@@ -236,7 +237,7 @@ class AcGamePlayground {
 ```
 修改static/js/src/zbase.js文件
 ```js
-class AcGame {
+export class AcGame { // 由于之前web.html文件中只部分引入AcGame，所以需要export暴露出来
     constructor(id) {
         this.id = id;
         this.$ac_game = $('#' + id);
