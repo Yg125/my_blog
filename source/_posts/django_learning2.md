@@ -83,6 +83,7 @@ JS_PATH_SRC=${JS_PATH}src/
 find $JS_PATH_SRC -type f -name '*.js' | sort | xargs cat > ${JS_PATH_DIST}game.js
 # 将src所有的js打包存入dist/game.js中
 ```
+
 在templates文件夹中创建`menu`,`playground`,`settings`和`multiends`四个文件夹，`multiends`用于多终端显示，并在其中创建`web.html`
 ```html
 {% load static %}
@@ -106,6 +107,7 @@ find $JS_PATH_SRC -type f -name '*.js' | sort | xargs cat > ${JS_PATH_DIST}game.
 
 ```
 在`views`文件夹中创建`menu`,`playground`,`settings`文件夹，并分别在三个文件夹中创建`__init__.py`文件，创建一个`index.py`文件,渲染得到html的信息
+
 ```python
 from django.shortcuts import render 
 
@@ -154,6 +156,13 @@ urlpatterns = [
 ### 2.1 新建界面
 创建`static/js/src/menu/zbase.js`和`static/js/src/playground/zbase.js`用来保存界面逻辑
 menu/zbase.js代码如下
+
+```js
+// js相关
+//  当对象是时html的一个组件的时候可用一个$符号放在变量前面
+//  当div里面是id时,需要加一个 ['#' + ]
+```
+
 ```js
 class AcGameMenu {
     constructor(root) {
