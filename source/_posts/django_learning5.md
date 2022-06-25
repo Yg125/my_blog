@@ -51,12 +51,14 @@ admin.site.register(Player) # 注册这个数据表 +
 流程大概是这样：
 
 用户(Client)每次一刷新，就会先给后台服务器(Server)发送一个请求(Request):`getinfo`获取用户信息，然后后台就会返回一个响应(Response)，表示用户信息(用户名，头像)或者登录失败的响应
+```
+----------  Request   ----------
+|        |----------->|        |
+| Client |  Response  | Server |
+|        |<-----------|        |
+----------            ----------
+```
 
-> ----------  Request   ----------
-> |        |----------->|        |
-> | Client |  Response  | Server |
-> |        |<-----------|        |
-> ----------            ----------
 <font color = red>每一次写操作的时候都要考虑views，url，js</font>
 
 

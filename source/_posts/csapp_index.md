@@ -11,6 +11,7 @@ top_img: https://d29fhpw069ctt2.cloudfront.net/photo/8551/preview/photo-14864641
 这是本人在哈尔滨工业大学（深圳）大三夏季学期中对于学习过的计算机知识加以总结和反思，中间会穿插很多我对于已学知识的思考
 因为这很有可能是本人最后一次这么系统认真的学习计算机系统的知识，所以想记录学习的过程
 <font color="red">全文主要是基于CSAPP书籍及相关课程</font>
+*This book is written for programmers who want to get better at their craft by understanding how these components work and how they affect the correctness and performance of their programs*
 
 ## 参考资料
 1. Computer Systems: A Programmer's Perspective, 3/E (CS:APP3e)Randal E. Bryant and David R. O'Hallaron, Carnegie Mellon University

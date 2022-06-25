@@ -106,3 +106,16 @@ deploy:
   type: git
   repo: git@github.com:Yg125/Yg125.github.io.git
   branch: main
+
+
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+  plugins:
+  anchors:
+    level: 1
+    collisionSuffix: ''
