@@ -24,3 +24,4 @@ top_img: https://d29fhpw069ctt2.cloudfront.net/photo/8551/preview/photo-14864641
 1. [计算机系统漫游](https://yg125.github.io/2022/06/25/csapp_1/)
 2. [信息的表示和处理](https://yg125.github.io/2022/06/25/csapp_2/)
 3. [程序的机器级表示](https://yg125.github.io/2022/06/25/csapp_3/)
+4. [处理器体系结构](https://yg125.github.io/2022/07/02/csapp_4/)
